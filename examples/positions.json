@@ -1,0 +1,48 @@
+{
+  "portfolio": [
+    {
+      "label": "Short 90d call",
+      "kind": "call",
+      "strike_ratio": 1.05,
+      "days": 90,
+      "quantity": -2
+    },
+    {
+      "label": "Short 90d put",
+      "kind": "put",
+      "strike_ratio": 0.95,
+      "days": 90,
+      "quantity": -2
+    },
+    {
+      "label": "Long 180d call",
+      "kind": "call",
+      "strike_ratio": 1.0,
+      "days": 180,
+      "quantity": 1
+    }
+  ],
+  "hedges": [
+    {
+      "label": "60d ATM put",
+      "kind": "put",
+      "strike_ratio": 1.0,
+      "days": 60,
+      "quantity": 1
+    },
+    {
+      "label": "60d ATM call",
+      "kind": "call",
+      "strike_ratio": 1.0,
+      "days": 60,
+      "quantity": 1
+    },
+    {
+      "label": "90d 95% put",
+      "kind": "put",
+      "strike_ratio": 0.95,
+      "days": 90,
+      "quantity": 1
+    }
+  ]
+}

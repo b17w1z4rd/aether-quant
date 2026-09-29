@@ -1,0 +1,20 @@
+name: Research checks
+on: [push, pull_request]
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e .
+      - run: python -m unittest discover -s tests -v
+      - run: python -m aether_quant demo --out artifacts/ci
+      - uses: actions/upload-artifact@v4
+        with:
+          name: research-report-${{ matrix.python }}
+          path: artifacts/ci/
